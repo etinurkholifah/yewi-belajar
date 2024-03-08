@@ -11,7 +11,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
             <li class="breadcrumb-item active">Tambah User</li>
           </ol>
         </div><!-- /.col -->
@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-group">
                           <label for="exampleInputEmail1">Nama</label>
-                          <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter Name">
+                          <input type="text" class="form-control" id="exampleInputEmail" name="nama" placeholder="Enter Name">
                           @error('nama')
                            <small>{{ $message }}</small>   
                           @enderror

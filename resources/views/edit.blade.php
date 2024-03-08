@@ -21,7 +21,7 @@
   <!-- /.content -->
   <section class="content">
     <div class="container-fluid">
-        <form action="{{ route('user.update', ['id' => $data ->id])}}" method="POST">
+        <form action="{{ route('user.update', $data->id)}}" method="POST">
             @csrf
             @method('PUT')
             <div class="row">
@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-group">
                           <label for="exampleInputEmail1">Nama</label>
-                          <input type="text" class="form-control" id="exampleInputEmail" value="{{$data->name}}" placeholder="Enter Name">
+                          <input type="text" class="form-control" id="exampleInputEmail" name="nama" value="{{$data->name}}" placeholder="Enter Name">
                           @error('nama')
                            <small>{{ $message }}</small>   
                           @enderror
@@ -60,7 +60,7 @@
                       <!-- /.card-body -->
         
                       <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                       </div>
                     </form>
                   </div>
