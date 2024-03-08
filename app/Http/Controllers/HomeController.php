@@ -46,7 +46,6 @@ class HomeController extends Controller
     }
 
     public function update(Request $request,$id){
-
         $validator = Validator::make($request->all(),[
             'email'     => 'required|email',
             'nama'      =>  'required',

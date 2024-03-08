@@ -224,7 +224,7 @@
               <li class="nav-item">
                 <a href="{{ route ('index')}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Users</p>
+                  <p>My Contact</p>
                 </a>
               </li>
               <li class="nav-item">
