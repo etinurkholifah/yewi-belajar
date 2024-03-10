@@ -5,12 +5,12 @@
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
+        <div class="col-sm-6 offset-sm-3 text-center">
           <h1 class="m-0">SELAMAT DATANG DI YAWI-ATTENDANCE</h1>
-        </div>
+          <h3> Hallo {{ $quotes}}</h3>
         </div>
       </div>
     </div>
+  </div>
 </div>
-
 @endsection
