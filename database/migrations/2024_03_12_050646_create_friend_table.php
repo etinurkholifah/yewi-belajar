@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('sosmed');
             $table->timestamps();
         });
+
     }
 
     /**

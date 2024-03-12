@@ -41,7 +41,7 @@ Route::post('/store',[App\Http\Controllers\HomeController::class,'store'])->name
 Route::get('/edit/{id}',[App\Http\Controllers\HomeController::class,'edit'])->name('user.edit');
 Route::put('/update/{id}',[App\Http\Controllers\HomeController::class,'update'])->name('user.update');
 Route::delete('/delete/{id}',[App\Http\Controllers\HomeController::class,'delete'])->name('user.delete');
-Route::get('punten',[App\Http\Controllers\HomeController::class, 'fetchApiQuotes']);
+Route::get('quotes',[App\Http\Controllers\HomeController::class, 'fetchApiQuotes']);
 
 
 

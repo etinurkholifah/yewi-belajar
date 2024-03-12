@@ -19,13 +19,13 @@ class HomeController extends Controller
     }
 
     public function index(){
-        $friends = Friend::all();
-        $quotes =$this->fetchApiQuotes();
-
-        return view('views.dashboard',[
-            'friends' => $friends,
-            'quotes'  => $quotes['data'] ?? [],
-        ]);
+            $friends = Friend::all();
+            $quotes = $this->fetchApiQuotes();
+        // dd($quotes);
+            return view('dashboard', [
+                'friends' => $friends,
+                'quotes'  => $quotes,
+            ]);
 
         $data = User::get();
         return view('index',compact('data'));
@@ -35,6 +35,7 @@ class HomeController extends Controller
         return view('create');
     }
     public function store(Request $request){
+        
         $validator = Validator::make($request->all(),[
             'nama'      =>  'required',
             'email'     => 'required|email',
@@ -110,11 +111,12 @@ class HomeController extends Controller
                 //return response()->json($response);
                 if($response->getStatusCode() ==200){
                     $response_ninja_api = json_decode($response->getBody()->getContents(),true);
-                    return response()->json([
-                        'code' => 200,
-                        'message' => 'Data Fetched',
-                        'data' => $response_ninja_api
-                    ]);
+                    return $response_ninja_api[0]["quote"];
+                    // return response()->json([
+                    //     'code' => 200,
+                    //     'message' => 'Data Fetched',
+                    //     'data' => $response_ninja_api
+                    // ]);
                 }else {
                     return response()->json([
                         'code'=>404,

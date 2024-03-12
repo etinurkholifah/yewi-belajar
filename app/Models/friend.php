@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Friend extends Model
 {
     use HasFactory;
-
-    protected $fillab = ['name', 'email', 'numer', 'sosmed'];
+    protected $table = "friend";
+    protected $fillable = ['name', 'email', 'numer', 'sosmed'];
 
     public function User()
     {
