@@ -35,16 +35,30 @@
                     <form>
                       <div class="card-body">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter email">
+                          <label for="exampleInputName">Nama</label>
+                          <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="Enter Name">
+                          @error('name')
+                           <small>{{ $message }}</small>   
+                          @enderror
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail">Email</label>
+                          <input type="email" class="form-control" id="exampleInputEmail" name="email" placeholder="Enter email">
                           @error('email')
                            <small>{{ $message }}</small>   
                           @enderror
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Nama</label>
-                          <input type="text" class="form-control" id="exampleInputEmail" name="nama" placeholder="Enter Name">
-                          @error('nama')
+                          <label for="exampleInputNumber">Number</label>
+                          <input type="number" class="form-control" id="exampleInputNumber" name="number" placeholder="Enter Number">
+                          @error('number')
+                           <small>{{ $message }}</small>   
+                          @enderror
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputSosmed">Sosmed</label>
+                          <input type="text" class="form-control" id="exampleInputSosmed" name="sosmed" placeholder="Enter Sosmed">
+                          @error('sosmed')
                            <small>{{ $message }}</small>   
                           @enderror
                         </div>

@@ -9,7 +9,7 @@ class Friend extends Model
 {
     use HasFactory;
 
-    protected $fillab = ['name', 'nomor', 'email', 'sosmed'];
+    protected $fillab = ['name', 'email', 'numer', 'sosmed'];
 
     public function User()
     {

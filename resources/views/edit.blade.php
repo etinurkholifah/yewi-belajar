@@ -36,16 +36,30 @@
                     <form>
                       <div class="card-body">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Email</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="{{$data->email}}"="Enter email">
+                          <label for="exampleInputName">Nama</label>
+                          <input type="text" class="form-control" id="exampleInputName" name="name" value="{{$data->name}}" placeholder="Enter Name">
+                          @error('name')
+                           <small>{{ $message }}</small>   
+                          @enderror
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail">Email</label>
+                          <input type="email" class="form-control" id="exampleInputEmail" name="email" value="{{$data->email}}"="Enter email">
                           @error('email')
                            <small>{{ $message }}</small>   
                           @enderror
                         </div>
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Nama</label>
-                          <input type="text" class="form-control" id="exampleInputEmail" name="nama" value="{{$data->name}}" placeholder="Enter Name">
-                          @error('nama')
+                          <label for="exampleInputNumber">Number</label>
+                          <input type="number" class="form-control" id="exampleInputNumber" name="number" value="{{$data->number}}"="Enter Number">
+                          @error('number')
+                           <small>{{ $message }}</small>   
+                          @enderror
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputSosmed">Sosmed</label>
+                          <input type="text" class="form-control" id="exampleInputSosmed" name="sosmed" value="{{$data->sosmed}}"="Enter Sosmed">
+                          @error('sosmed')
                            <small>{{ $message }}</small>   
                           @enderror
                         </div>

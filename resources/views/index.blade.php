@@ -43,6 +43,8 @@
                 <th>No</th>
                 <th>Nama</th>
                 <th>Email</th>
+                <th>Number</th>
+                <th>Sosmed</th>
                 <th>Action</th>
               </tr>
             </thead>

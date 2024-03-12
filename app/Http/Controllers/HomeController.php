@@ -22,9 +22,9 @@ class HomeController extends Controller
         $friends = Friend::all();
         $quotes =$this->fetchApiQuotes();
 
-        return view('views.layout.dashboard',[
+        return view('views.dashboard',[
             'friends' => $friends,
-            'quotes'  => $quotes
+            'quotes'  => $quotes['data'] ?? [],
         ]);
 
         $data = User::get();
@@ -36,16 +36,20 @@ class HomeController extends Controller
     }
     public function store(Request $request){
         $validator = Validator::make($request->all(),[
-            'email'     => 'required|email',
             'nama'      =>  'required',
+            'email'     => 'required|email',
+            'number'    => 'required',
+            'sosmed'    => 'required',
             'password'  =>  'required',
         ]);
 
         if($validator-> fails()) return redirect()->back()->withInput()->withErrors($validator);
 
 
-        $data['email'] = $request->email;
         $data['name'] = $request->nama;
+        $data['email'] = $request->email;
+        $data['number'] = $request->number;
+        $data['sosmed'] = $request->sosmed;
         $data['password'] = Hash::make($request->password);
 
         User::create($data);
@@ -60,16 +64,21 @@ class HomeController extends Controller
 
     public function update(Request $request,$id){
         $validator = Validator::make($request->all(),[
-            'email'     => 'required|email',
+            
             'nama'      =>  'required',
+            'email'     => 'required|email',
+            'number'      =>  'required',
+            'sosmed'      =>  'required',
             'password'  =>  'nullable',
         ]);
 
         if($validator-> fails()) return redirect()->back()->withInput()->withErrors($validator);
 
 
-        $data['email'] = $request->email;
         $data['name'] = $request->nama;
+        $data['email'] = $request->email;
+        $data['number'] = $request->number;
+        $data['sosmed'] = $request->sosmed;
         if($request->password){
             $data['password'] = Hash::make($request->password);
         }

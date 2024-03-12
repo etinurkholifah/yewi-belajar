@@ -40,7 +40,7 @@ class LoginController extends Controller
     }
     public function register_proses(Request $request){
         $request -> validate([
-            'nama'      => 'required',
+            'name'      => 'required',
             'email'     => 'required|email|unique:users,email',
             'password'  =>  'required|min:6'
         ]);
